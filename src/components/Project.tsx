@@ -1,6 +1,6 @@
 import "../assets/styles/Project.scss";
 
-interface Project {
+interface ProjectProps {
   url: string;
   title: string;
   description: string;
@@ -50,7 +50,7 @@ function Project() {
     <div className="projects-container" id="projects">
       <h1>Personal Projects</h1>
       <div className="projects-grid">
-        {projects.map((project: Project) => (
+        {projects.map((project: ProjectProps) => (
           <a href={project.url} target="_blank" rel="noreferrer">
             <div className="project zoom">
               <h2>{project.title}</h2>
