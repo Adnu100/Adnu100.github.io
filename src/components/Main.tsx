@@ -45,7 +45,7 @@ function Main() {
             <br />
             <p>
               <HouseIcon />{" "}
-              <span className="personal_info location">Boston, MA, USA</span>
+              <span className="personal_info location">Cupertino, CA, USA</span>
             </p>
             <br />
             <p>

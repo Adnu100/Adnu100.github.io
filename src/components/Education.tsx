@@ -29,7 +29,7 @@ function Education() {
         <div className="skills-grid">
           <div className="skill education">
             <h2>MS in Computer Science</h2>
-            <h4>Northeastern University, Boston (Aug 2025 - Current)</h4>
+            <h4>Northeastern University, Boston (Sep 2025 - May 2027)</h4>
             <h5>GPA: 4 / 4</h5>
             <div className="flex-chips">
               <span className="chip-title">Relevant Coursework:</span>

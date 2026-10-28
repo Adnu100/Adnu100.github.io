@@ -18,6 +18,22 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: "white", color: "rgb(39, 40, 34)" }}
             contentArrowStyle={{ borderRight: "7px solid  white" }}
+            date="May 2026 - Current"
+            iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
+            icon={<FontAwesomeIcon icon={faBriefcase} />}
+          >
+            <h3 className="vertical-timeline-element-title">
+              SQA Engineer Coop
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">Nokia</h4>
+            <p>
+              Test automation (Python, pytest) for SR Linux carrier-grade
+              routers, AI-assisted test execution workflows (Cursor skills),
+              Docker and remote testbeds
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
             date="March 2023 - August 2025"
             iconStyle={{ background: "#5000ca", color: "rgb(39, 40, 34)" }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}

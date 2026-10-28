@@ -35,6 +35,11 @@ const skills = [
   "Jenkins",
   "Splunk",
   "Dynatrace",
+  "Chef",
+  "Docker",
+  "pytest",
+  "Claude Code",
+  "Cursor",
   "REST API",
 ];
 
