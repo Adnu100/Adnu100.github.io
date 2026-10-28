@@ -1,30 +1,26 @@
 import { useState, useEffect } from "react";
 import {
   Main,
+  Highlights,
   Timeline,
   Expertise,
+  Research,
+  Education,
   Project,
   Navigation,
   Footer,
 } from "./components";
-import FadeIn from "./components/FadeIn";
 import "./index.scss";
-import Education from "./components/Education";
-import Research from "./components/Research";
 
 function App() {
   const [mode, setMode] = useState<string>("dark");
 
   const handleModeChange = () => {
-    if (mode === "dark") {
-      setMode("light");
-    } else {
-      setMode("dark");
-    }
+    setMode(mode === "dark" ? "light" : "dark");
   };
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, left: 0 });
   }, []);
 
   return (
@@ -34,14 +30,13 @@ function App() {
       }`}
     >
       <Navigation parentToChild={{ mode }} modeChange={handleModeChange} />
-      <FadeIn transitionDuration={700}>
-        <Main />
-        <Expertise />
-        <Timeline />
-        <Research />
-        <Education />
-        <Project />
-      </FadeIn>
+      <Main />
+      <Highlights />
+      <Expertise />
+      <Timeline />
+      <Research />
+      <Education />
+      <Project />
       <Footer />
     </div>
   );

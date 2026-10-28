@@ -1,87 +1,83 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import HouseIcon from "@mui/icons-material/House";
+import CodeIcon from "@mui/icons-material/Code";
+import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
+import PlaceIcon from "@mui/icons-material/Place";
 import "../assets/styles/Main.scss";
+
+const links = [
+  {
+    label: "GitHub",
+    href: "https://github.com/Adnu100",
+    icon: <GitHubIcon />,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/adnesh-dhamangaonkar",
+    icon: <LinkedInIcon />,
+  },
+  {
+    label: "HackerRank",
+    href: "https://www.hackerrank.com/profile/dhamangaonadnesh",
+    icon: <CodeIcon />,
+  },
+];
 
 function Main() {
   return (
-    <div className="container">
-      <div className="about-section">
-        <div className="image-wrapper">
-          <img
-            src={require("../assets/images/without-background.png")}
-            alt="Avatar"
-          />
+    <header className="hero" id="about">
+      <div className="hero-inner">
+        <div className="hero-text">
+          <span className="status">
+            <i /> MS CS @ Northeastern · SQA Engineer Coop @ Nokia
+          </span>
+          <h1>
+            Hi, I'm <span className="gradient-text">Adnesh Dhamangaonkar</span>
+          </h1>
+          <p className="tagline">
+            Software engineer with 4+ years at Mastercard building Spring Boot
+            services and batch systems, now automating test infrastructure for
+            carrier-grade routers at Nokia.
+          </p>
+          <div className="hero-actions">
+            <a className="btn primary" href="mailto:dhamangaonkar.a@northeastern.edu">
+              <EmailIcon /> Get in touch
+            </a>
+            <a
+              className="btn"
+              href={`${process.env.PUBLIC_URL}/Adnesh_Dhamangaonkar_Resume.pdf`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <DownloadIcon /> Resume
+            </a>
+            {links.map((l) => (
+              <a
+                key={l.label}
+                className="btn"
+                href={l.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {l.icon} {l.label}
+              </a>
+            ))}
+          </div>
+          <p className="location">
+            <PlaceIcon /> Cupertino, CA, USA
+          </p>
         </div>
-        <div className="content">
-          <div className="social_icons">
-            <a
-              href="https://www.github.com/Adnu100"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GitHubIcon />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/adnesh-dhamangaonkar/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkedInIcon />
-            </a>
-          </div>
-          <h1>Adnesh Dhamangaonkar</h1>
-          <p>Full Stack Software Engineer</p>
-          <br />
-          <div className="personal_info">
-            <p>
-              <LocalPhoneIcon />{" "}
-              <span className="personal_info phone_number">
-                +1 (617) 369-2484
-              </span>
-            </p>
-            <br />
-            <p>
-              <HouseIcon />{" "}
-              <span className="personal_info location">Cupertino, CA, USA</span>
-            </p>
-            <br />
-            <p>
-              <EmailIcon />{" "}
-              <span className="personal_info email">
-                dhamangaonadnesh@gmail.com
-              </span>
-            </p>
-            <br />
-            <p>
-              <EmailIcon />{" "}
-              <span className="personal_info email">
-                dhamangaonkar.a@northeastern.edu
-              </span>
-            </p>
-            <br />
-          </div>
-          <div className="mobile_social_icons">
-            <a
-              href="https://www.github.com/Adnu100"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GitHubIcon />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/adnesh-dhamangaonkar/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkedInIcon />
-            </a>
+        <div className="hero-photo">
+          <div className="ring">
+            <img
+              src={require("../assets/images/without-background.png")}
+              alt="Adnesh Dhamangaonkar"
+            />
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 

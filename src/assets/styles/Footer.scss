@@ -1,15 +1,44 @@
 footer {
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
+  text-align: center;
+  padding: 40px 24px 48px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-alt);
 
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+
+    a {
+      display: inline-flex;
+      color: var(--muted);
+      &:hover {
+        color: var(--accent);
+      }
+    }
     svg {
-        width: 1.1em !important;
-        height: 1.1em !important;
-        margin-right: 10px;
+      font-size: 1.6rem;
     }
+  }
 
-    p {
-        font-size: 0.8em;
+  p {
+    margin: 14px 0 6px;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--accent);
+    &:hover {
+      text-decoration: underline;
     }
+  }
+}
+
+.main-container footer button {
+  color: var(--accent);
 }

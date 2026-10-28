@@ -1,60 +1,63 @@
-import "@fortawesome/free-regular-svg-icons";
-import Chip from "@mui/material/Chip";
-import "../assets/styles/Expertise.scss";
+import Reveal from "./Reveal";
+import SectionHead from "./SectionHead";
+import "../assets/styles/Education.scss";
 
-const coursework1 = [
-  "Programming Design Paradigms",
-  "Algorithms",
-  "Database Systems",
-  "Web Development",
-];
-
-const coursework2 = [
-  "Computer Programming",
-  "Data Structures and Algorithms",
-  "Database Systems",
-  "Computer Networks",
-  "Operating Systems",
-  "Software Engineering",
-  "Cloud Computing",
-  "Artificial Intelligence",
-  "Advanced Linux Programming",
+const schools = [
+  {
+    degree: "MS in Computer Science",
+    school: "Northeastern University, Boston",
+    date: "Sep 2025 - May 2027",
+    score: "GPA 4 / 4",
+    courses: [
+      "Programming Design Paradigms",
+      "Algorithms",
+      "Database Systems",
+      "Web Development",
+    ],
+  },
+  {
+    degree: "B.Tech in Computer Engineering",
+    school: "College of Engineering, Pune",
+    date: "Aug 2017 - May 2021",
+    score: "CGPA 8.27 / 10",
+    courses: [
+      "Data Structures and Algorithms",
+      "Database Systems",
+      "Computer Networks",
+      "Operating Systems",
+      "Software Engineering",
+      "Cloud Computing",
+      "Artificial Intelligence",
+      "Advanced Linux Programming",
+    ],
+  },
 ];
 
 function Education() {
   return (
-    <div className="container" id="education">
-      <div className="skills-container">
-        <h1>Education</h1>
-        <div className="skills-grid">
-          <div className="skill education">
-            <h2>MS in Computer Science</h2>
-            <h4>Northeastern University, Boston (Sep 2025 - May 2027)</h4>
-            <h5>GPA: 4 / 4</h5>
-            <div className="flex-chips">
-              <span className="chip-title">Relevant Coursework:</span>
-              {coursework1.map((label, index) => (
-                <Chip key={index} className="chip" label={label} />
-              ))}
+    <section className="section" id="education">
+      <SectionHead eyebrow="Where I studied" title="Education" />
+      <div className="edu-grid">
+        {schools.map((s, i) => (
+          <Reveal key={s.degree} delay={i * 0.1}>
+            <div className="card edu">
+              <span className="score">{s.score}</span>
+              <h3>{s.degree}</h3>
+              <h4>{s.school}</h4>
+              <p className="date">{s.date}</p>
+              <span className="label">Relevant coursework</span>
+              <div className="chip-row">
+                {s.courses.map((c) => (
+                  <span className="chip" key={c}>
+                    {c}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
-        <br />
-        <div className="skills-grid">
-          <div className="skill education">
-            <h2>B.Tech in Computer Engineering</h2>
-            <h4>College of Engineering, Pune (Aug 2017 - May 2021)</h4>
-            <h5>CGPA: 8.27 / 10</h5>
-            <div className="flex-chips">
-              <span className="chip-title">Relevant Coursework:</span>
-              {coursework2.map((label, index) => (
-                <Chip key={index} className="chip" label={label} />
-              ))}
-            </div>
-          </div>
-        </div>
+          </Reveal>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
 

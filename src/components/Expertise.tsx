@@ -1,75 +1,62 @@
-import "@fortawesome/free-regular-svg-icons";
-import Chip from "@mui/material/Chip";
+import Reveal from "./Reveal";
+import SectionHead from "./SectionHead";
 import "../assets/styles/Expertise.scss";
 
-const skills = [
-  "C",
-  "C++",
-  "Java",
-  "Python",
-  "Bash",
-  "Spring Boot",
-  "Spring MVC",
-  "Spring Batch",
-  "Flask",
-  "Node.js",
-  "Express.js",
-  "Angular",
-  "React",
-  "React Native",
-  "Expo",
-  "TypeScript",
-  "JavaScript",
-  "HTML5",
-  "CSS3",
-  "Tailwind CSS",
-  "SQL",
-  "IBM DB2",
-  "OracleDB",
-  "MySQL",
-  "MongoDB",
-  "Postman",
-  "Linux",
-  "AWS",
-  "PCF",
-  "Jenkins",
-  "Splunk",
-  "Dynatrace",
-  "Chef",
-  "Docker",
-  "pytest",
-  "Claude Code",
-  "Cursor",
-  "REST API",
+const groups = [
+  {
+    title: "Languages",
+    items: ["Java", "Python", "C", "C++", "TypeScript", "JavaScript", "Bash", "SQL"],
+  },
+  {
+    title: "Backend",
+    items: ["Spring Boot", "Spring MVC", "Spring Batch", "Flask", "Node.js", "Express.js", "REST APIs", "pytest"],
+  },
+  {
+    title: "Frontend",
+    items: ["React", "Angular", "React Native", "Expo", "HTML5", "CSS3", "Tailwind CSS"],
+  },
+  {
+    title: "Databases",
+    items: ["MySQL", "MongoDB", "IBM DB2", "Oracle DB"],
+  },
+  {
+    title: "Cloud & DevOps",
+    items: ["AWS", "PCF", "Docker", "Jenkins", "Chef", "Splunk", "Dynatrace", "Git", "Linux"],
+  },
+  {
+    title: "AI-assisted dev",
+    items: ["Claude Code", "Cursor", "Agile"],
+  },
 ];
 
 function Expertise() {
   return (
-    <div className="container" id="expertise">
-      <div className="skills-container">
-        <h1>Expertise</h1>
-        <div className="skills-grid">
-          <div className="skill">
-            <h3>Full Stack Web Development</h3>
-            <p>
-              I am a full stack web developer with expertise in different
-              frontend technologies like React, Angular and backend technologies
-              like Spring Boot, Flask, Express.js. I have experience working
-              with databases like MySQL, DB2, OracleDB etc. I also have
-              experience working with cloud platforms like AWS and PCF. I can
-              deploy applications in a CI/CD environment using tools like
-              Jenkins. I am well familiar with working in agile environment.
-            </p>
-            <div className="flex-chips">
-              <span className="chip-title">Tech stack:</span>
-              {skills.map((label, index) => (
-                <Chip key={index} className="chip" label={label} />
-              ))}
+    <section className="section" id="expertise">
+      <SectionHead eyebrow="What I work with" title="Expertise" />
+      <Reveal>
+        <p className="lead">
+          Full stack engineer comfortable across Spring Boot backends, Angular
+          and React frontends, batch processing, cloud deployment with CI/CD,
+          and Python test automation, working in agile teams.
+        </p>
+      </Reveal>
+      <div className="skill-groups">
+        {groups.map((g, i) => (
+          <Reveal key={g.title} delay={i * 0.06}>
+            <div className="card skill-group">
+              <h3>{g.title}</h3>
+              <div className="chip-row">
+                {g.items.map((label) => (
+                  <span className="chip" key={label}>
+                    {label}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
+          </Reveal>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
 
